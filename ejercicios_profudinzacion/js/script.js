@@ -42,3 +42,42 @@ en "section".
 */
 
 /* Comienza a escribir su código aquí */
+
+
+const seccionContenedor = document.querySelector("section");
+
+let acumuladorCards = " "
+
+for(const info of data) {
+
+  acumuladorCards += 
+`<article>
+<img
+  src= ${info.thumbnail}
+  class="icon-type"
+  alt="icon type"
+/>
+<p>
+${info.name}
+</p>
+</article>`
+}
+
+seccionContenedor.innerHTML = acumuladorCards;
+
+
+const propiedadesPlanta = document.querySelectorAll("article");
+for (const prop of propiedadesPlanta) {
+  prop.addEventListener("mouseover", function () {
+    prop.classList.add("planta");
+  })
+}
+
+const propiedadesPlantas = document.querySelectorAll("article");
+for (const prop of propiedadesPlantas) {
+  prop.addEventListener("mouseout", function () {
+    prop.classList.remove("planta");
+  })
+}
+
+
